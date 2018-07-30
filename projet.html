@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Nodya Test</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="col-xs-6">
+          <div class="row">
+              <div class="col-xs-6">
+                    <input onchange="setMarkers();" id="origin-input" class="controls" type="text"placeholder="Depart">
+                    <input onchange="setMarkers();" id="destination-input" class="controls" type="text"placeholder="Arrivée">                
+                    <div id="mode-selector" class="controls">
+                        <input onclick="setMarkers();" type="radio" name="type" id="changemode-walking" checked="checked">
+                        <label for="changemode-walking">À pied </label>
+
+                        <input onclick="setMarkers();" type="radio" name="type" id="changemode-transit">
+                        <label for="changemode-transit">Transports </label>
+                
+                        <input onclick="setMarkers();" type="radio" name="type" id="changemode-driving">
+                        <label for="changemode-driving">Voiture </label>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-xs-6">
+          <div id="map"></div>
+      </div>
+      <div class="col-xs-12"id="info-itinerary"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxBruzNWomRwIcEAdYHovZpAdnnCMxaz8&libraries=places&callback=initMap" async defer></script>
+    <script src="script.js"></script>
+  </body>
+</html>
